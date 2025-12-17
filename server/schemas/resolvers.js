@@ -41,5 +41,21 @@ module.exports = {
       }
       throw AuthenticationError;
     },
+    login: async (_, {username, password }) => {
+      const user = await User.findOne({ username });
+
+      if (!user) {
+        throw AuthenticationError;
+      }
+
+      const correctPw = await user.isCorrectPassword(password)
+
+      if (!correctPw) {
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+      return { token, user };
+    }
   },
 };
