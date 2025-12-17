@@ -15,6 +15,10 @@ const UserSchema = new Schema(
         "Invalid password please select a password that is at least contains 1 upper case letter, 1 lower case letter, and is at least 8 characters long. Your password may also have special characters if you like.",
       ],
     },
+    posts: {
+      type: Schema.Types.ObjectId,
+      ref: 'Post'
+    }
   },
   {
     toJSON: {},

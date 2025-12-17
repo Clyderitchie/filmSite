@@ -5,20 +5,30 @@ module.exports = gql`
     _id: ID
     username: String
     password: String
+    posts: [Post]
   }
-  
-  type Auth {
-  token: ID
-  user: User
-}
 
+  type Post {
+    _id: ID
+    text: String
+    picture: String
+    userId: User
+  }
+
+  type Auth {
+    token: ID
+    user: User
+  }
 
   type Query {
     getAllUsers: [User]
     getUser(userId: ID): User
+    getAllPosts: [Post]
+    getPost(postId: ID): Post
   }
 
   type Mutation {
-    createUser(username: String, password: String): Auth #Still need to create Auth file
+    createUser(username: String, password: String): Auth 
+    createPost(text: String, picture: String): Post
   }
 `;
