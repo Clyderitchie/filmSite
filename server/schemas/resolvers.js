@@ -8,6 +8,7 @@ module.exports = {
     },
     getUser: async (_, args) => {
       console.log("User Id: ", args);
+      // Git test
       return await User.findById(args.userId);
     },
   },
