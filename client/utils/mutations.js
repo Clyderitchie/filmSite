@@ -22,7 +22,6 @@ export const CREATE_POST = gql`
       userId {
         _id
         username
-        password
       }
     }
   }
@@ -47,5 +46,17 @@ export const LOGIN = gql`
         }
       }
     }
+  }
+`;
+
+export const DELETE_USER = gql`
+  mutation deleteUser($userId: ID) {
+    deleteUser(userId: $userId)
+  }
+`;
+
+export const DELETE_POST = gql`
+  mutation deletePost($postId: ID) {
+    deletePost(postId: $postId)
   }
 `;

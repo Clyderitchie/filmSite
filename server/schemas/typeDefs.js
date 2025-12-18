@@ -25,11 +25,14 @@ module.exports = gql`
     getUser(userId: ID): User
     getAllPosts: [Post]
     getPost(postId: ID): Post
+    me: User
   }
 
   type Mutation {
     createUser(username: String, password: String): Auth 
     createPost(text: String, picture: String): Post
     login(username: String!, password: String!): Auth 
+    deleteUser(userId: ID): Boolean
+    deletePost(postId: ID): Boolean
   }
 `;

@@ -19,7 +19,7 @@ export const QUERY_USERS = gql`
   }
 `;
 
-export const QUERY_POSTS = gql`
+export const QUERY_AllPOSTS = gql`
   query getAllPosts {
     getAllPosts {
       _id
@@ -42,6 +42,25 @@ export const QUERY_POST = gql`
       userId {
         _id
         username
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      password
+      posts {
+        _id
+        text
+        picture
+        userId {
+          _id
+          username
+        }
       }
     }
   }
