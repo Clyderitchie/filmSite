@@ -12,7 +12,7 @@ import Home from "./pages/home";
 import NavBar from "./components/NavBar.jsx";
 import PersonalPage from "./pages/personal.jsx";
 import Blog from "./pages/blog.jsx";
-import CreateBlogForm from "./components/createBlog.jsx";
+import CreatePostForm from './pages/createPostForm.jsx';
 import LoginPage from "./pages/login.jsx";
 
 const httpLink = createHttpLink({
@@ -50,7 +50,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/personal" element={<PersonalPage />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/createBlog" element={<CreateBlogForm />} />
+            <Route path="/createPost" element={<CreatePostForm />} />
             <Route
               path="/login"
               element={<LoginPage handleLogin={handleLogin} />}

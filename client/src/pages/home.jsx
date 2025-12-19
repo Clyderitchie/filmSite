@@ -1,5 +1,5 @@
 import React from "react";
-import CreateBlogPost from "./createBlogPost";
+import CreateBlogPost from "../components/createBlogPost";
 
 function Home() {
   return (
