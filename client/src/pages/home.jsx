@@ -1,11 +1,15 @@
 import React from "react";
 import CreateBlogPost from "../components/createBlogPost";
+import PageHeading from "../components/pageHeading";
 
 function Home() {
   return (
     <>
-      <div className="text-right">Hello world</div>
-      <div><CreateBlogPost/></div>
+      <div className="h-screen ">     
+          {/* <PageHeading /> */}
+          <CreateBlogPost />
+      </div>
+      
     </>
   );
 }

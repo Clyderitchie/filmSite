@@ -14,6 +14,7 @@ import PersonalPage from "./pages/personal.jsx";
 import Blog from "./pages/blog.jsx";
 import CreatePostForm from './pages/createPostForm.jsx';
 import LoginPage from "./pages/login.jsx";
+import PageHeading from "./components/pageHeading.jsx";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,7 +48,8 @@ function App() {
         <NavBar />
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<PageHeading />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/personal" element={<PersonalPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/createPost" element={<CreatePostForm />} />
